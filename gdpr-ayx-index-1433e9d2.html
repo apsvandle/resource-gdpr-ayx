@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简明指南 · ayx · 合规访问提醒</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: #fafaf9;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #1f1f1f;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* 顶部导航 */
+    .site-nav {
+      padding: 16px 0;
+      border-bottom: 1px solid #e6e6e6;
+      background: #ffffff;
+    }
+    .site-nav .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: -0.01em;
+      color: #1f1f1f;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #4a4a4a;
+      font-size: 0.95rem;
+      font-weight: 450;
+      padding: 4px 0;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #1f1f1f;
+    }
+    /* hero */
+    .hero {
+      padding: 80px 0 48px;
+    }
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 550;
+      letter-spacing: -0.02em;
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      color: #4a4a4a;
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+    .hero .meta-note {
+      font-size: 0.9rem;
+      color: #888;
+      border-left: 3px solid #d4d4d4;
+      padding-left: 16px;
+      margin-top: 8px;
+    }
+    /* 通用标题 */
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      margin-top: 56px;
+    }
+    h3 {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 10px;
+      color: #2a2a2a;
+    }
+    /* 卡片网格 (场景模块) */
+    .scenes-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+    .scene-card {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 28px 30px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 2px 8px rgba(0,0,0,0.03);
+      border: 1px solid #f0f0ed;
+      transition: box-shadow 0.15s;
+    }
+    .scene-card:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .scene-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .scene-card p {
+      color: #3a3a3a;
+      font-size: 0.98rem;
+      margin-bottom: 0;
+    }
+    .scene-card .card-label {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: #f0efec;
+      padding: 2px 10px;
+      border-radius: 40px;
+      color: #4d4d4d;
+      margin-top: 12px;
+    }
+    /* 常见说明 (faq风格) */
+    .faq-item {
+      border-bottom: 1px solid #eaeae7;
+      padding: 20px 0;
+    }
+    .faq-item:first-of-type {
+      border-top: 1px solid #eaeae7;
+    }
+    .faq-question {
+      font-weight: 500;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+      color: #1f1f1f;
+    }
+    .faq-answer {
+      color: #555;
+      font-size: 0.96rem;
+      line-height: 1.6;
+    }
+    .faq-answer a {
+      color: #1f1f1f;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+      font-weight: 450;
+    }
+    .faq-answer a:hover {
+      opacity: 0.7;
+    }
+    /* 页面底部 */
+    .page-footer {
+      margin-top: 72px;
+      padding: 32px 0 48px;
+      border-top: 1px solid #e6e6e6;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #777;
+    }
+    .page-footer a {
+      color: #555;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    /* 响应式 */
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+      .hero h1 { font-size: 1.8rem; }
+      .site-nav .container { flex-wrap: wrap; gap: 8px; }
+      .nav-links { gap: 20px; }
+      .scene-card { padding: 22px 20px; }
+      h2 { font-size: 1.4rem; margin-top: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- 顶部导航 -->
+  <nav class="site-nav">
+    <div class="container">
+      <a href="#" class="nav-brand">简明指南</a>
+      <ul class="nav-links">
+        <li><a href="#guide">指南</a></li>
+        <li><a href="#scenes">场景</a></li>
+        <li><a href="#faq">说明</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- 主内容 -->
+  <div class="container">
+
+    <!-- hero 区域 -->
+    <section class="hero">
+      <h1>关于 ayx 的访问提醒<br>与简明指南</h1>
+      <p>如果你正在了解或使用相关服务，这里整理了一些基础信息和场景思路，方便你快速判断下一步。保持轻盈，也保持清晰。</p>
+      <div class="meta-note">本页由独立维护，内容仅作参考。</div>
+    </section>
+
+    <!-- 简短介绍：从指南角度 -->
+    <section>
+      <p style="font-size:1.0rem; color:#3d3d3d; max-width:640px; margin-bottom:32px;">
+        日常使用网络时，偶尔会遇到访问不顺畅或页面变化的情况。这时候先不用着急，可以检查一下环境、链接来源，或者直接通过已知的地址访问。其中 <a href="https://gdpr-ayx.com.cn" style="color:#1f1f1f; text-decoration:underline; text-underline-offset:3px; font-weight:450;">ayx</a> 是一个常用的参考入口，适合作为核对起点。下面三个场景模块覆盖了多数常见情形。
+      </p>
+    </section>
+
+    <!-- 三个场景模块 -->
+    <h2 id="scenes">常见场景</h2>
+    <div class="scenes-grid">
+      <div class="scene-card">
+        <h3>📎 首次接触 &nbsp;·&nbsp; 核对来源</h3>
+        <p>如果你刚听说某个服务或平台，先确认一下链接是否正确。直接在浏览器输入 <a href="https://gdpr-ayx.com.cn" style="color:#1f1f1f; text-decoration:underline; text-underline-offset:2px;">ayx</a> 可以到达对应的页面，避免中间跳转带来的不确定因素。</p>
+        <span class="card-label">建议先做</span>
+      </div>
+      <div class="scene-card">
+        <h3>🔁 访问异常 &nbsp;·&nbsp; 环境检查</h3>
+        <p>页面加载慢、打不开或显示异常时，可以先检查网络设置和浏览器版本。同时可以尝试通过 <a href="https://gdpr-ayx.com.cn" style="color:#1f1f1f; text-decoration:underline; text-underline-offset:2px;">ayx</a> 直接访问，确认服务端是否正常运行。多数问题与本地环境有关。</p>
+        <span class="card-label">常见排查</span>
+      </div>
+      <div class="scene-card">
+        <h3>🧭 日常使用 &nbsp;·&nbsp; 保持更新</h3>
+        <p>如果你已经在使用相关服务，偶尔留意一下官方动态或页面底部的更新说明。通过 <a href="https://gdpr-ayx.com.cn" style="color:#1f1f1f; text-decoration:underline; text-underline-offset:2px;">ayx</a> 能获取到最新状态，也可以作为日常访问的书签。</p>
+        <span class="card-label">长期习惯</span>
+      </div>
+    </div>
+
+    <!-- 常见说明 (FAQ摘要) -->
+    <h2 id="faq">一些常见说明</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">Q：为什么有时候访问 ayx 会跳转或显示不同内容？</div>
+      <div class="faq-answer">
+        A：这通常与你的网络环境、浏览器设置或地区有关。不同网络下看到的结果可能略有差异，建议直接使用链接 <a href="https://gdpr-ayx.com.cn">ayx</a> 作为固定入口。如果持续异常，可以稍后再试或切换网络环境。
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Q：页面简洁，没有复杂的功能菜单，是正常的吗？</div>
+      <div class="faq-answer">
+        A：是的。很多参考页面本身就保持轻量和直接，主要用来提供必要的信息或跳转。简洁不等于不完整，反而更容易聚焦。你看到的就是当前版本的内容。
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Q：保存书签时，应该用哪个地址最稳妥？</div>
+      <div class="faq-answer">
+        A：推荐将 <a href="https://gdpr-ayx.com.cn">ayx</a> 这个地址加入书签。它是固定的主站，方便你随时回来核对。如果官方以后有结构变化，站内可能也会给出指引。
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Q：这个页面和 ayx 网站是什么关系？</div>
+      <div class="faq-answer">
+        A：本页是独立的辅助说明，主要从访问思路和场景出发，提供一些通用的提醒和解释。内容并不代表 <a href="https://gdpr-ayx.com.cn">ayx</a> 官方，但所有链接均指向真实站点。
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 底部 -->
+  <footer class="page-footer">
+    <div class="container">
+      <p>简明指南 · 独立维护 · 仅供参考</p>
+      <p style="margin-top:6px;">主站：<a href="https://gdpr-ayx.com.cn">ayx</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
